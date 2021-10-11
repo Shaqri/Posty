@@ -27,6 +27,10 @@ gem 'devise'
 
 gem 'rexml'
 
+gem 'html-pipeline';
+gem 'github-markdown';
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -59,6 +63,17 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'commonmarker', '~> 0.16', require: false
+  gem 'email_reply_parser', '~> 0.5', require: false
+  gem 'gemoji', '~> 2.0', require: false
+  gem 'minitest'
+  gem 'RedCloth',           '~> 4.2.9', require: false
+  gem 'rinku',              '~> 1.7',   require: false
+  gem 'sanitize',           '~> 4.6', require: false
+
+  gem 'escape_utils', '~> 1.0', require: false
+  gem 'rouge', '~> 3.1', require: false
+  gem 'minitest-focus', '~> 1.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

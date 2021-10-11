@@ -9,11 +9,13 @@ import * as ActiveStorage from "@rails/activestorage"
 import { Application } from '@hotwired/stimulus'
 import { definitionsFromContext } from '@hotwired/stimulus-webpack-helpers';
 import "channels"
+import jQuery from 'jquery';
 
 window.Stimulus = Application.start();
 const context = require.context("./controllers", true, /\.js$/);
 Stimulus.load(definitionsFromContext(context));
-const images = require.context("../images", true )
+require.context("../images", true )
+global.$ = jQuery;
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    RedCloth (4.2.9)
     actioncable (6.1.4.1)
       actionpack (= 6.1.4.1)
       activesupport (= 6.1.4.1)
@@ -77,6 +78,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (3.0.0)
+    commonmarker (0.23.2)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     database_cleaner-active_record (2.0.1)
@@ -90,15 +92,22 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.4.4)
+    email_reply_parser (0.5.10)
     erubi (1.10.0)
+    escape_utils (1.2.1)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
     ffi (1.15.4)
+    gemoji (2.1.0)
+    github-markdown (0.6.9)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    html-pipeline (2.14.0)
+      activesupport (>= 2)
+      nokogiri (>= 1.4)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -115,10 +124,14 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.1)
     minitest (5.14.4)
+    minitest-focus (1.3.1)
+      minitest (>= 4, < 6)
     msgpack (1.4.2)
     nio4r (2.5.8)
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
+    nokogumbo (1.5.0)
+      nokogiri
     orm_adapter (0.5.0)
     pg (1.2.3)
     public_suffix (4.0.6)
@@ -167,6 +180,8 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rinku (1.7.3)
+    rouge (3.26.1)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -185,6 +200,10 @@ GEM
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
     rubyzip (2.3.2)
+    sanitize (4.6.6)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.4.4)
+      nokogumbo (~> 1.4)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -243,20 +262,32 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  RedCloth (~> 4.2.9)
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  commonmarker (~> 0.16)
   database_cleaner-active_record
   devise
+  email_reply_parser (~> 0.5)
+  escape_utils (~> 1.0)
   factory_bot_rails
+  gemoji (~> 2.0)
+  github-markdown
+  html-pipeline
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  minitest
+  minitest-focus (~> 1.1)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
   rexml
+  rinku (~> 1.7)
+  rouge (~> 3.1)
   rspec-rails
+  sanitize (~> 4.6)
   sass-rails (>= 6)
   selenium-webdriver
   shoulda-matchers

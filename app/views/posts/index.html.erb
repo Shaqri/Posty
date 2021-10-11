@@ -15,7 +15,8 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.description %></td>
+        <td><%= markdownify post.description %></td>
+        <p id="<%= post.id %>_likes"><%= render partial: "likes", locals: {post: post} %></p>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
