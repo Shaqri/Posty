@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts
   has_many :likes
+  has_many :comments, as: :commentable
   validates :name, :email, :password, :password_confirmation, presence: true
   validates :email, uniqueness: {case_sensitive: true}
   validates :name, length: {minimum: 5, max: 20}

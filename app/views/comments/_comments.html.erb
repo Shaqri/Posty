@@ -1,0 +1,12 @@
+<div id="comments">
+  <h3>Comments</h3>
+
+  
+    <% commentable.comments.includes(:user).each do |comment| %>
+      <div>
+        <h3><%= comment.user.name %></h3>
+        <p><%= comment.body %><p>
+      </div>
+    <%end%>
+  
+</div>
