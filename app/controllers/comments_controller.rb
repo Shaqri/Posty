@@ -6,10 +6,14 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.save
     respond_to do |format|
-      format.html {redirect_to @commentable, notice: "Your comment was succeessfully posted."}
+      format.html {redirect_to @commentable, notice: "Your comment was succeessfully posted." }
       format.js
     end
 
+  end
+
+  def show
+    p @commentable
   end
 
   private

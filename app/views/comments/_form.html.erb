@@ -1,5 +1,7 @@
 <%= form_for [commentable, Comment.new ] do |f|%>
+  <%= commentable%>
   <div class="form-group">
+    <%= f.hidden_field :id, value: commentable.id%>
     <%= f.text_area :body, class: "form-control", placeholder: "Add Comment"%>
   </div>
   <%= f.submit class: "btn btn-primary"%>

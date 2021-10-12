@@ -7,6 +7,10 @@
         <h3><%= comment.user.name %></h3>
         <p><%= comment.body %><p>
       </div>
+
+      <%= render partial: 'comments/form', locals: {commentable: comment}%>
+
+      <%= render partial: 'comments/comments', locals: {commentable: comment}%>
     <%end%>
   
 </div>
