@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
+  resources :events
   root to: "posts#index"
   devise_for :users
 
   resources :users do
+    member do
+      post :follow
+    end
     resources :comments, module: :users 
   end
 
   resources :posts do
+    member do
+      post :bookmark
+    end
     resource :like, module: :posts
-    resources :comments, module: :posts 
+    resources :comments, module: :posts
   end
 
   resources :comments do

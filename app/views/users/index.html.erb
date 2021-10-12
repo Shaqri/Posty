@@ -1,0 +1,9 @@
+<div>
+  <% @users.each do |user|%>
+    <div>
+      <h1><%= user.name %><h1>
+      <%= image_tag user.avatar_url %>
+      <%= link_to "follow", follow_user_path(user), method: :post %>
+    </div>
+  <% end %>
+<div>
