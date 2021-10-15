@@ -30,7 +30,6 @@ gem 'rexml'
 gem 'html-pipeline';
 gem 'github-markdown';
 
-
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

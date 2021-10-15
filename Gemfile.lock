@@ -112,6 +112,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
+    jquery-atwho-rails (1.5.4)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -276,6 +277,7 @@ DEPENDENCIES
   github-markdown
   html-pipeline
   jbuilder (~> 2.7)
+  jquery-atwho-rails
   listen (~> 3.3)
   minitest
   minitest-focus (~> 1.1)

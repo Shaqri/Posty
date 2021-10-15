@@ -1,4 +1,7 @@
 <h1><%= @user.name %></h1>
 
-<%= render partial: 'comments/comments', locals: {commentable: @user} %>
-<%= render partial: "comments/form", locals: {commentable: @user}%>
+<h3>Comments</h3>
+
+<%= render partial: 'comments/form', locals: {commentable: @user }%>
+
+<%= render @user.comments.where(parent_id: nil) %>
