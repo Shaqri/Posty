@@ -1,0 +1,8 @@
+@import './normalize';
+
+.no-decoration {
+  text-decoration: none;
+  &:hover {
+    background-color: inherit;
+  }
+}
