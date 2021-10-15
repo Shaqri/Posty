@@ -1,46 +1,14 @@
 <div class="row p-3">
-  <section class="col-8 border border-info">
-      <% @posts.each do |post| %>
-        <article class="card my-2 m-auto w-75">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-            <h2 class="card-title"><%= link_to "#{post.title}", post, class: "no-decoration"%></h2>
-            <div class="dropdown text-nowrap">
-
-                <%= link_to bookmark_post_path(post), method: :post, class: "no-decoration" do%>
-                  <button type="button" class="btn btn-light">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
-                      <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
-                    </svg>
-                  </button>
-                <% end %>
-                <% if post.user_id == current_user.try(:id) %>
-                <button type="button" class="btn btn-light" id="moreDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
-                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                  </svg>
-                </button>
-                <% end %>
-              
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="moreDropdown">
-                <li><%= link_to 'Edit', edit_post_path(post), class: "dropdown-item" %></li>
-                <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item" %></li>
-              </ul>
-            </div>
-            </div>
-            <p><%= markdownify post.description %></p>
-            <div id="<%= post.id %>_likes" class="text-end">
-              <%= render partial: "likes", locals: {post: post} %>
-            </div>
-          </div>        
-        </article>
-      <% end %>
-      <%= link_to 'New Post', new_post_path %>
+  <%= render partial: 'form', locals: {post: @post}%>
+  <section id="posts" class="col-8 border border-info">
+    <%= render @posts%>  
   </section>
+  
 
-  <aside class="border col-4">
+  <aside class="border border-primary col-4">
     
   </aside>
+  <%= link_to 'New Post', new_post_path %>
 </div>
 
 
