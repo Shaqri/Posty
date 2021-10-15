@@ -1,17 +1,15 @@
-<%= form_with(model: post, local: false) do |form| %>
+<%= form_with(model: post, local: false, html: {class: "w-75 m-auto p-3 pb-0 border rounded bg-light", id: "post-form"}) do |form| %>
   <%= render partial: 'errors', locals: {post: post}%>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, placeholder: "Title", class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_area :description, placeholder: "Description", class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Create Post', class: "btn btn-primary" %>
   </div>
 <% end %>

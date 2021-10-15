@@ -1,11 +1,19 @@
-<div class="row p-3">
-  <%= render partial: 'form', locals: {post: @post}%>
-  <section id="posts" class="col-8 border border-info">
+<div class="row g-0">
+  <% if user_signed_in? %>
+     <section class="border col-12 row g-0">
+      <div class="col-8 ">
+        <%= render partial: 'form', locals: {post: @post}%>
+      </div>
+      <div class="col-4 border">
+      </div>
+    </section>
+  <% end %>
+  <section id="posts" class="col-8">
     <%= render @posts%>  
   </section>
   
 
-  <aside class="border border-primary col-4">
+  <aside class="border col-4">
     
   </aside>
   <%= link_to 'New Post', new_post_path %>
