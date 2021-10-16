@@ -43,6 +43,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
   gem 'database_cleaner-active_record'
+  gem 'guard-livereload', '~> 2.5', require: false
 end
 
 group :development do
@@ -54,6 +55,9 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+   gem 'guard'
+   gem 'guard-zeus'
+  gem 'rack-livereload'
 end
 
 group :test do

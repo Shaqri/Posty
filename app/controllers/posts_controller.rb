@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show edit update destroy bookmark ]
   before_action :verify_owner, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create]
   # GET /posts or /posts.json
@@ -58,12 +58,12 @@ class PostsController < ApplicationController
       @post.destroy
       respond_to do |format|
         format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
-        format.json { head :no_content }
+        format.js
       end
   end
   
   def bookmark
-    current_user.events.create("bookmarked", eventable: @post)
+    current_user.events.create(action: "bookmarked", eventable: @post)
     redirect_to  posts_path
   end
 

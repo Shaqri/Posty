@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :likes
   has_many :comments, as: :commentable
-  has_many :events
+  has_many :events 
   validates :name, :email, :password, :password_confirmation, presence: true
   validates :email, uniqueness: {case_sensitive: true}
   validates :name, length: {minimum: 5, max: 20}

@@ -2,25 +2,13 @@
 
 <h1>Events</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Action</th>
-      <th>Eventable</th>
-      <th>Eventable type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div>
     <% @events.each do |event| %>
-      <% if lookup_context.template_exist?(event.action, "events/activities", true)%>
+      <% if lookup_context.template_exists?(event.action, "events/activities", true)%>
       <%= render partial: "events/activities/#{event.action}", locals: {event: event}%>
       <% end %>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
 <br>
 

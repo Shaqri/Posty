@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
   has_many :comments, as: :commentable
+  has_many :events, as: :eventable, dependent: :destroy
   validates :title, :description, presence: true
 
   def mentions

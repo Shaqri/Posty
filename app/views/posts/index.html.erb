@@ -1,6 +1,6 @@
-<div class="row g-0">
+<div class="row container mt-3 m-auto g-0">
   <% if user_signed_in? %>
-     <section class="border col-12 row g-0">
+     <section class="col-12 row g-0">
       <div class="col-8 ">
         <%= render partial: 'form', locals: {post: @post, submit_text: "Create"}%>
       </div>
@@ -14,9 +14,8 @@
   
 
   <aside class="border col-4">
-    
+    user
   </aside>
-  <%= link_to 'New Post', new_post_path %>
 </div>
 
 
