@@ -22,4 +22,7 @@ class User < ApplicationRecord
     "http://www.gravatar.com/avatar/#{hash}"
   end
   
+  def username
+    "@#{name.gsub(/\s/, '')}"
+  end
 end

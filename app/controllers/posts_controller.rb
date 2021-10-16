@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @post = Post.new
+    @users = User.take(10)
     @posts = Post.order(created_at: :desc).all
   end
 
