@@ -2,7 +2,7 @@
   <% if user_signed_in? %>
      <section class="border col-12 row g-0">
       <div class="col-8 ">
-        <%= render partial: 'form', locals: {post: @post}%>
+        <%= render partial: 'form', locals: {post: @post, submit_text: "Create"}%>
       </div>
       <div class="col-4 border">
       </div>
